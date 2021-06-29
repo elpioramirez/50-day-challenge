@@ -1,0 +1,12 @@
+.sliding-container {
+	display: flex;
+	width: 90vw;
+
+	@media (max-width: 480px) {
+		width: 100vw;
+	}
+
+	@media (min-width: 1200px) {
+		width: 1100px;
+	}
+}
