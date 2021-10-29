@@ -1,0 +1,161 @@
+.nav-bar {
+	background-color: #fff;
+	padding: 20px;
+	width: 80px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 3px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	transition: width 1s linear;
+
+	&.v-middle {
+		top: 50vh;
+		transform: translate(0%, -50%);
+	}
+	&.v-bottom {
+		top: 100vh;
+		//bottom: 0;
+		transform: translate(0%, -100%);
+	}
+	&.h-middle {
+		left: 50vw;
+		transform: translate(-50%, 0%);
+		&.v-middle {
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	&.h-left {
+		left: 0;
+		//transform: translate(-50%, 0%);
+		&.v-middle {
+			transform: translate(0%, -50%);
+		}
+	}
+
+	&.active {
+		//width: 350px;
+		width: 100vw;
+		ul {
+			width: 100%;
+			& li {
+				opacity: 1;
+				transform: rotateY(360deg);
+			}
+		}
+		.icon {
+			.line1 {
+				transform: rotate(-765deg) translateY(5.5px);
+			}
+			.line2 {
+				transform: rotate(765deg) translateY(-5.5px);
+			}
+		}
+	}
+	ul {
+		display: flex;
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		width: 0;
+		transition: width 1s linear;
+		a {
+			position: relative;
+			color: #000;
+			text-decoration: none;
+			margin: 0 10px;
+		}
+		& li {
+			transform: rotateY(0deg);
+			opacity: 0;
+			transition: transform 1.5s linear, opacity 0.5s linear;
+		}
+	}
+	.icon {
+		background-color: #fff;
+		border: 0;
+		cursor: pointer;
+		padding: 0;
+		position: relative;
+		height: 30px;
+		width: 30px;
+		&:focus {
+			outline: 0;
+		}
+		.line {
+			background-color: #5290f9;
+			height: 2px;
+			width: 20px;
+			position: absolute;
+			top: 10px;
+			left: 5px;
+			transition: transform 0.6s linear;
+
+			&.line2 {
+				top: auto;
+				bottom: 10px;
+			}
+		}
+	}
+
+	&.theme-dark {
+		background-color: #000;
+		.icon {
+			background-color: #000;
+		}
+		ul {
+			a {
+				color: #fff;
+			}
+		}
+	}
+
+	&.theme-light-blue {
+		background-color: #5290f9;
+		.icon {
+			background-color: #5290f9;
+			.line {
+				background-color: #fff;
+			}
+		}
+		ul {
+			a {
+				color: #fff;
+			}
+		}
+	}
+
+	&.theme-pink {
+		background-color: #ff005d;
+		.icon {
+			background-color: #ff005d;
+			.line {
+				background-color: #fff;
+			}
+		}
+		ul {
+			a {
+				color: #fff;
+			}
+		}
+	}
+
+	&.theme-purple {
+		background-color: #cc00ff;
+		.icon {
+			background-color: #cc00ff;
+			.line {
+				background-color: #fff;
+			}
+		}
+		ul {
+			a {
+				color: #fff;
+			}
+		}
+	}
+}

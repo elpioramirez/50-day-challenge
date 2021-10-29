@@ -1,0 +1,85 @@
+.card {
+	display: flex;
+	background: white;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 6px rgba(0, 0, 0, 0.05);
+	transition: 0.4s;
+	-webkit-transition: 0.4s;
+	border-radius: 2px;
+	margin-top: -5px;
+
+	&.swipeable {
+		overflow: auto;
+		overflow-x: scroll;
+		scroll-snap-type: x mandatory;
+
+		.element {
+			scroll-snap-align: start;
+			min-width: 100%;
+		}
+		.action {
+			min-width: 100%;
+		}
+	}
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	.element {
+		padding: 16px;
+		background-color: rgb(180, 172, 172);
+	}
+	.action {
+		padding: 20px;
+		display: flex;
+		align-items: center;
+
+		&.left {
+			background-color: rgb(201, 20, 195);
+			&.success {
+				background-color: rgb(62, 177, 27);
+			}
+			&.info {
+				background-color: rgb(53, 117, 236);
+			}
+			&.danger {
+				background-color: rgb(236, 53, 53);
+			}
+			&.warning {
+				background-color: rgb(235, 231, 15);
+			}
+		}
+
+		&.right {
+			justify-content: flex-end;
+			background-color: cornflowerblue;
+		}
+	}
+
+	i {
+		color: white;
+		position: sticky;
+		left: 16px;
+		right: 16px;
+	}
+
+	&:last-child {
+		box-shadow: 0 1p 3px rgba(0, 0, 0, 0.12), 0 1p 2px rgba(0, 0, 0, 0.24);
+	}
+
+	&.active {
+		margin-top: 10px;
+		height: 50px;
+		transition: 0.4s;
+		-webkit-transition: 0.4s;
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+		&:first-child {
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+		}
+		/* &:nth-child() {
+			box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+		} */
+		&:last-child {
+			box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+				0 10px 10px rgba(0, 0, 0, 0.22);
+		}
+	}
+}

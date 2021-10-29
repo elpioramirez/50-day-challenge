@@ -1,0 +1,37 @@
+:root {
+	--primary-color: #3498db;
+	--secondary-color: #e0e0e0;
+	--disabled-color: #6e6d6d;
+}
+
+.btn {
+	background-color: var(--primary-color);
+	border: 0;
+	color: #fff;
+	border-radius: 6px;
+	cursor: pointer;
+	font-family: inherit;
+	padding: 8px 30px;
+	margin: 5px;
+	font-size: 14px;
+	&-success {
+		background-color: #55af19;
+	}
+	&-warning {
+		background-color: #ecd714;
+	}
+	&-danger {
+		background-color: #c92a25;
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+		background-color: var(--disabled-color);
+	}
+	&:active {
+		transform: scale(0.98);
+	}
+	&:focus {
+		outline: 0;
+	}
+}
